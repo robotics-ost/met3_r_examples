@@ -1,0 +1,8 @@
+jupyterlab
+ipykernel
+notebook
+sympy
+numpy
+matplotlib
+plotly
+nbformat
