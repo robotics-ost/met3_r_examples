@@ -1,0 +1,78 @@
+<mxfile host="Electron">
+  <diagram name="Regelkreis" id="regelkreis">
+    <mxGraphModel dx="975" dy="663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="350" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sum" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=18;" value="" vertex="1">
+          <mxGeometry height="40" width="40" x="160" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_plus" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" value="+" vertex="1">
+          <mxGeometry height="20" width="20" x="140" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="sum_minus" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" value="-" vertex="1">
+          <mxGeometry height="20" width="20" x="158" y="187" as="geometry" />
+        </mxCell>
+        <mxCell id="regler" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" value="Regler&lt;br&gt;(zeitdiskret, Ts)&lt;br&gt;&lt;font face=&quot;monospace&quot;&gt;regler()&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="160" x="270" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="strecke" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" value="Strecke&lt;br&gt;(zeitkontinuierlich)&lt;br&gt;&lt;font face=&quot;monospace&quot;&gt;strecke()&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="160" x="510" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="label_v" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" value="v(t)" vertex="1">
+          <mxGeometry height="30" width="60" x="780" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_r" edge="1" parent="1" source="zbYQ02hHKkOKAikHkJOE-1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;elbow=vertical;startArrow=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;verticalAlign=bottom;" target="sum" value="v_soll(t)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="165.0000000000001" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_e" edge="1" parent="1" source="sum" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;elbow=vertical;startArrow=none;fontSize=13;verticalAlign=bottom;" target="regler" value="e">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_F" edge="1" parent="1" source="regler" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;elbow=vertical;startArrow=none;fontSize=13;verticalAlign=bottom;" target="strecke" value="F">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_v" edge="1" parent="1" source="strecke" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;elbow=vertical;startArrow=none;" target="label_v">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_feedback" edge="1" parent="1" source="strecke" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;startArrow=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;rounded=0;" target="sum">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="165" />
+              <mxPoint x="720" y="280.03" />
+              <mxPoint x="180" y="280.03" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zbYQ02hHKkOKAikHkJOE-12" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="70" width="70" x="20" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="zbYQ02hHKkOKAikHkJOE-1" parent="zbYQ02hHKkOKAikHkJOE-12" style="whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="70" width="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zbYQ02hHKkOKAikHkJOE-7" connectable="0" parent="zbYQ02hHKkOKAikHkJOE-12" style="group" value="" vertex="1">
+          <mxGeometry height="30" width="60" x="5" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zbYQ02hHKkOKAikHkJOE-2" edge="1" parent="zbYQ02hHKkOKAikHkJOE-7" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="10.714285714285719" y="30.00428571428569" as="sourcePoint" />
+            <mxPoint x="30" y="30" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zbYQ02hHKkOKAikHkJOE-5" edge="1" parent="zbYQ02hHKkOKAikHkJOE-7" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="30" y="30" as="sourcePoint" />
+            <mxPoint x="30" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zbYQ02hHKkOKAikHkJOE-6" edge="1" parent="zbYQ02hHKkOKAikHkJOE-7" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="30" as="sourcePoint" />
+            <mxPoint x="49.28571428571429" y="-0.004285714285710388" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
